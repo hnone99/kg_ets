@@ -1,0 +1,142 @@
+$visual-height: 300px !default;
+$visual-height-md: 200px !default;
+
+.line{width: 100%;height: 1px;background: #ddd;overflow: hidden;line-height: 0;font-size: 0;}
+
+#visual{
+    height: $visual-height + $header-height;text-align: center;padding-top: $header-height;
+    display: flex;
+    align-items: center;
+    background-color: #555;
+    h2{
+        color: #fff;font-size: 72px;line-height: 1;
+    }
+    p{
+        color: #fff;font-size: 24px;line-height: 2.67;
+    }
+}
+@include media-breakpoint-down(md) {
+    #visual{
+        height: $visual-height-md + $header-height-md;padding-top: $header-height-md;
+        h2{
+            font-size: 28px;line-height: 1.2;margin-bottom: 15px;
+        }
+        p{
+            font-size: 16px;line-height: 1.6;
+        }
+    }
+}
+
+.title-wrap{
+    text-align: center;padding: 60px 0 0;position: relative;
+
+    &::after{
+        content: '';display: block;width: 1px;height: 38px;background-color: $dark;margin: 20px auto;
+    }
+
+    .title{
+        display: inline-block;font-size: 18px;font-weight: 700;border: 2px solid #fff;padding: .98rem 3.5rem 1rem;vertical-align: top;position: relative;margin: 0 auto;
+        -webkit-transition:1s;
+
+        &::before,
+        &::after{
+            width: 100%;
+            height:100%;
+            content:'';
+            position: absolute;
+            top:0;
+            left:0;
+            -webkit-transform: scale(0);
+            transition: 0.5s;
+        }
+        &.active{
+            //border-color: $dark;    
+            &::before,
+            &::after{
+                width: 100%;
+                height:100%;
+                content:'';
+                position: absolute;
+                top:0;
+                left:0;
+                -webkit-transform: scale(0);
+                transition: 0.5s;
+                -webkit-transform: scale(1);
+            }
+            &::before {
+                border-bottom: 2px solid $dark;
+                border-left: 2px solid $dark;
+                -webkit-transform-origin: 0 100%;
+              }
+              
+            &::after {
+                border-top: 2px solid $dark;
+                border-right: 2px solid $dark;
+                -webkit-transform-origin: 100% 0%;
+            }
+        }
+    }
+    
+    .desc{
+        font-size: 24px;font-weight: 700;margin-top: 18px;
+        strong{
+            color: $primary;font-weight: 700;
+        }
+    }
+}
+@include media-breakpoint-down(md) {
+    .title-wrap{
+        padding: 30px 0 0;
+        &::after{height: 25px;}
+        .title{padding: .68rem 2.75rem .7rem;}
+        .desc{font-size: 15px;}
+    }
+}
+
+.summary{
+    padding: 50px 0;
+    ul{
+        li{
+            .num{
+                span{ 
+                    display: block;width: 60px;height: 60px; color: #fff;font-size: 20px;font-weight: 700;background: $primary;margin: 0 auto; line-height: 60px;position: relative;border-radius: 100px; -webkit-border-radius: 100px; -moz-border-radius: 100px; -ms-border-radius: 100px; -o-border-radius: 100px;
+                }
+                &::after{
+                    content: '';display: block;width: 1px;height: 40px;background: $dark;margin: 20px auto;
+                }
+            }
+            .heading{
+                font-size: 24px;font-weight: 700;display: block;margin-bottom: 20px;
+            }
+            .text{
+                line-height: 2;
+                em{
+                    color: $primary;font-weight: 500;
+                }
+            }
+        }
+    }
+}
+@include media-breakpoint-down(md) {
+    .summary{
+        padding: 30px 0;
+        ul{
+            li{
+                .num{
+                    span{ 
+                        width: 40px;height: 40px;font-size: 18px;line-height: 40px;
+                    }
+                    &::after{
+                        height: 20px;margin: 15px auto;
+                    }
+                }
+                .heading{
+                    font-size: 19px;margin-bottom: 12px;
+                }
+                .text{
+                    line-height: 1.5;
+                }
+            }
+        }
+    }
+}

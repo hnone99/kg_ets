@@ -1,0 +1,140 @@
+html,body{overflow-x: hidden;}
+
+.container{width: 1200px;margin: 0 auto;}
+
+.background {
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    will-change: transform;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+    height: 100vh;
+    width: 100%;
+    -webkit-transition: all 1.2s cubic-bezier(0.22, 0.44, 0, 1);
+    transition: all 1.2s cubic-bezier(0.22, 0.44, 0, 1);
+}
+.background.sec-service {
+    background-image: url(../images/bg1.jpg);
+}
+.background.sec-news {
+    background-image: url(../images/bg2.jpg);
+}
+.background.sec-product {
+    background-image: url(../images/bg3.jpg);
+}
+.background.sec-company {
+    background-image: url(../images/bg4.jpg);
+}
+
+.content-wrapper {
+    height: 100vh;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: center;
+            justify-content: center;
+    text-align: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-flow: column nowrap;
+    color: #fff;
+    text-transform: uppercase;
+    /* -webkit-transform: translateY(40vh);
+            transform: translateY(40vh); */
+    will-change: transform;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+    -webkit-transition: all 1.7s cubic-bezier(0.22, 0.44, 0, 1);
+    transition: all 1.7s cubic-bezier(0.22, 0.44, 0, 1);
+}
+.content-title {font-weight: 700;font-size: 36px;line-height: 1.4;background: url(../images/bul_point.png) no-repeat 50% 100%;padding-bottom: 42px;margin-bottom: 40px;}
+
+#header{ position: fixed; width: 100%; left: 0; top: 0; z-index: 100; height: 110px; transition:all 0.15s; -webkit-transition:all 0.15s; -moz-transition:all 0.15s; -ms-transition:all 0.15s; -o-transition:all 0.15s; }
+#header .logo{position: absolute;left: 60px;top: 10px;}
+#header .right{position: absolute;right: 60px;top: 28px;}
+#header .right a{vertical-align: middle;margin-left: 25px;display: inline-block;}
+
+.main-jumbotron{height: 100vh;position: relative;}
+.main-jumbotron .swiper-container{height: 100%;}
+.main-jumbotron .swiper-slide{height: 100%;overflow: hidden;}
+.main-jumbotron .swiper-item{position: absolute;width: 100%;height: 100%;left: 0;top: 0;background-size: cover;background-position: center;display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: center;
+            justify-content: center;
+    text-align: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-flow: column nowrap;
+    color: #fff;}
+.main-jumbotron .content-title{font-size: 18px;opacity: 0;}
+.main-jumbotron .content-title.active{opacity: 1;}
+.main-jumbotron .content-subtitle{line-height: 1.36;font-size: 66px;font-weight: 700;opacity: 0;margin-top: 40px;margin-bottom: 100px;}
+.main-jumbotron .content-subtitle.active{ margin-top: 40px; transition: all 0.3s; -webkit-transition: all 0.3s; -moz-transition: all 0.3s; -ms-transition: all 0.3s; -o-transition: all 0.3s; opacity: 1; margin-top: 0; }
+.main-jumbotron .scroll{ position: absolute; left: 50%; bottom: 14%; transform: translate(-50%,-50%); -webkit-transform: translate(-50%,-50%); -moz-transform: translate(-50%,-50%); -ms-transform: translate(-50%,-50%); -o-transform: translate(-50%,-50%); z-index: 1;}
+.main-jumbotron .swiper-pagination{bottom: 50px;}
+.main-jumbotron .swiper-pagination-bullet{ width: 50px; height: 1px; background: #fff; opacity: 1; border-radius: 0; -webkit-border-radius: 0; -moz-border-radius: 0; -ms-border-radius: 0; -o-border-radius: 0; }
+.main-jumbotron .swiper-pagination-bullet-active{height: 4px;}
+
+.sec-news .content-subtitle{line-height: 1.42;font-size: 42px;font-weight: 700;}
+.sec-news .img{margin-top: 70px;}
+
+.sec-service .content-subtitle{line-height: 1.36;font-size: 72px;font-weight: 700;}
+
+.sec-product .products{margin-top: 50px;}
+.sec-product .products img{width: 340px;}
+.sec-product .products .swiper-slide{width: 340px;}
+.sec-product .products .swiper-pagination-wrap-products{padding-left: 50%;margin-left: -170px;}
+.sec-product .products .swiper-pagination-progressbar{top: auto;position: relative;height: 1px;background-color: #fff;margin-top: 45px;}
+.sec-product .products .swiper-pagination-progressbar .swiper-pagination-progressbar-fill{background-color: #862a91;height: 9px;;margin-top: -4px;}
+.sec-company .content-subtitle{line-height: 1.42;font-size: 42px;font-weight: 700;}
+.sec-company .img{margin-top: 70px;}
+
+.btn-top{ position: fixed; right:-80px; bottom:20px; z-index: 100;transition: all 0.3s; -webkit-transition: all 0.3s; -moz-transition: all 0.3s; -ms-transition: all 0.3s; -o-transition: all 0.3s; }
+
+.is-sticky #header{ background-color: rgba(0,0,0,0.4); height: 90px; transform: translate(0,-15px); -webkit-transform: translate(0,-15px); -moz-transform: translate(0,-15px); -ms-transform: translate(0,-15px); -o-transform: translate(0,-15px); }
+.is-sticky #header .logo{top: 25px;}
+.is-sticky #header .logo img{width: 90px;}
+.is-sticky .btn-top{right: 20px;}
+
+.util-site-map-box {
+    position: fixed;
+    z-index: 10000;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255,255,255,0.9);
+    -webkit-transition: left 380ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    -moz-transition: left 380ms cubic-bezier(0.215, 0.61, 0.355, 1);
+    -ms-transition: left 380ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    -o-transition: left 380ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    transition: left 380ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  }
+  .sitemap-open{overflow: hidden;width: 100%;height: 100vh;}
+  .sitemap-open .util-site-map-box {
+    left: 0;
+    -webkit-transition: left 480ms 120ms cubic-bezier(0.45, 0, 0.25, 1);
+    -moz-transition: left 480ms 120ms cubic-bezier(0.45, 0, 0.25, 1);
+    -ms-transition: left 480ms 120ms cubic-bezier(0.45, 0, 0.25, 1);
+    -o-transition: left 480ms 120ms cubic-bezier(0.45, 0, 0.25, 1);
+    transition: left 480ms 120ms cubic-bezier(0.45, 0, 0.25, 1);
+  }
+  .util-site-map-box .site-map-close {
+    position: absolute;
+    right: 34px;
+    width: 80px;
+    height: 80px;
+    padding: 29px;
+    font-size: 22px;
+    line-height: 22px;
+  }
+  .map-gnb{height: 100%;}
+  .sitemap{
+    display: flex;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    justify-content: space-around;
+    flex-direction: column;
+    height: 100%;
+  }
