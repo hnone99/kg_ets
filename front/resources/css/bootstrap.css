@@ -84,6 +84,7 @@ h1, h2, h3, h4, h5, h6 {
 p {
   margin-top: 0;
   margin-bottom: 0;
+  line-height: 1.8;
 }
 
 abbr[title],
@@ -208,8 +209,6 @@ table {
 }
 
 caption {
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
   color: #adb5bd;
   text-align: left;
   caption-side: bottom;
@@ -386,7 +385,7 @@ template {
 
 @media (min-width: 1260px) {
   .container {
-    max-width: 1200px;
+    max-width: 1230px;
   }
 }
 
@@ -418,7 +417,7 @@ template {
 
 @media (min-width: 1260px) {
   .container, .container-sm, .container-md, .container-lg, .container-xl {
-    max-width: 1200px;
+    max-width: 1230px;
   }
 }
 
@@ -1842,13 +1841,14 @@ template {
 
 .table {
   width: 100%;
+  border-bottom: 1px solid #ddd;
   margin-bottom: 1rem;
   color: #4b4e51;
 }
 
 .table th,
 .table td {
-  padding: 0.75rem;
+  padding: 1rem;
   vertical-align: top;
   border-top: 1px solid #ddd;
 }
@@ -1856,10 +1856,33 @@ template {
 .table thead th {
   vertical-align: bottom;
   border-bottom: 2px solid #ddd;
+  background-color: #fafafa;
+}
+
+.table tbody th {
+  background-color: #fafafa;
+  vertical-align: middle;
+}
+
+.table tbody th label {
+  margin: 0;
 }
 
 .table tbody + tbody {
   border-top: 2px solid #ddd;
+}
+
+.table.table-center th,
+.table.table-center td {
+  text-align: center;
+}
+
+@media (max-width: 991.98px) {
+  .table th,
+  .table td {
+    padding: .5rem;
+    font-size: 0.8125rem;
+  }
 }
 
 .table-sm th,
@@ -2709,7 +2732,7 @@ textarea.form-control {
   padding: 0.345rem 0.75rem;
   font-size: 1rem;
   line-height: 1.5;
-  border-radius: 0.25rem;
+  border-radius: 0;
   -webkit-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
@@ -3335,7 +3358,7 @@ fieldset:disabled a.btn {
   padding: 0.5rem 1rem;
   font-size: 1.25rem;
   line-height: 1.5;
-  border-radius: 0.3rem;
+  border-radius: 0;
   font-weight: 700;
 }
 
@@ -3343,7 +3366,7 @@ fieldset:disabled a.btn {
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
   line-height: 1.5;
-  border-radius: 0.2rem;
+  border-radius: 0;
 }
 
 .btn-block {
@@ -4464,6 +4487,103 @@ input[type="button"].btn-block {
     -webkit-transition: none;
     transition: none;
   }
+}
+
+.nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.nav-link {
+  display: block;
+  padding: 0.5rem 1rem;
+}
+
+.nav-link:hover, .nav-link:focus {
+  text-decoration: none;
+}
+
+.nav-link.disabled {
+  color: #6c757d;
+  pointer-events: none;
+  cursor: default;
+}
+
+.nav-tabs {
+  border-bottom: 1px solid #ddd;
+}
+
+.nav-tabs .nav-item {
+  margin-bottom: -1px;
+}
+
+.nav-tabs .nav-link {
+  border: 1px solid transparent;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+}
+
+.nav-tabs .nav-link:hover, .nav-tabs .nav-link:focus {
+  border-color: #e9ecef #e9ecef #ddd;
+}
+
+.nav-tabs .nav-link.disabled {
+  color: #6c757d;
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.nav-tabs .nav-link.active,
+.nav-tabs .nav-item.show .nav-link {
+  color: #4b4e51;
+  background-color: #fff;
+  border-color: #ddd #ddd #fff;
+}
+
+.nav-tabs .dropdown-menu {
+  margin-top: -1px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.nav-pills .nav-link {
+  border-radius: 0.25rem;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #862991;
+}
+
+.nav-fill .nav-item {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  text-align: center;
+}
+
+.nav-justified .nav-item {
+  -ms-flex-preferred-size: 0;
+      flex-basis: 0;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  text-align: center;
+}
+
+.tab-content > .tab-pane {
+  display: none;
+}
+
+.tab-content > .active {
+  display: block;
 }
 
 .pagination {

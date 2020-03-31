@@ -4,6 +4,7 @@
 
 .table {
   width: 100%;
+  border-bottom: $table-border-width solid $table-border-color;
   margin-bottom: $spacer;
   color: $table-color;
   background-color: $table-bg; // Reset for nesting within parents with `background-color`.
@@ -18,14 +19,37 @@
   thead th {
     vertical-align: bottom;
     border-bottom: (2 * $table-border-width) solid $table-border-color;
+    background-color: #fafafa;
+  }
+
+  tbody th{
+    background-color: #fafafa;
+    vertical-align: middle;
+  }
+  tbody th label{
+    margin: 0;
   }
 
   tbody + tbody {
     border-top: (2 * $table-border-width) solid $table-border-color;
   }
+
+  &.table-center {
+    th,
+    td{
+      text-align: center;
+    }
+  }
 }
 
-
+@include media-breakpoint-down(md) {
+  .table {
+      th,
+      td {
+          padding: .5rem;font-size: 0.8125rem;
+      }
+  }
+}
 //
 // Condensed table w/ half padding
 //

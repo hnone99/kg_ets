@@ -5,6 +5,12 @@ $zindex-header: 1001 !default;
 $zindex-sitemap: 1000 !default;
 $zindex-btn-top: 999 !default;
 
+$visual-height: 300px !default;
+$visual-height-md: 180px !default;
+
+$content-padding-y: 60px !default;
+$content-padding-y-md: 30px !default;
+
 html,body{
     //overflow-x: hidden;
     min-width:320px !important;
@@ -20,10 +26,12 @@ html,body{
 #view{
     min-height:550px;
     padding-bottom: 200px;
+    padding-top: $content-padding-y;
 }
 
 @include media-breakpoint-down(md) {
     #view{
-        padding-bottom: 100px;
+        padding-bottom: 60px;
+        padding-top: $content-padding-y-md;
     }
 }
