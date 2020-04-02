@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>KG ETS</title>
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width">
+    <meta name="keywords" content="KG ETS, KG, KG ECO  TECHNOLOGY SERVICES, 친환경, 재생에너지, 신소재, 도금용 산화동, 황산동, 산업용 산화동, 탄산동, 산화텅스텐, 바이오중유, 에너지사업, 증기사업, 신소재사업, R&E사업, 바이오사업부, 열병합발전, 존경받는 기업, 자랑스런 회사, 환경, 기술, 봉사, 산업폐기물, 시약 분류 시스템, 폐시약">
+    <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../../resources/css/reset.css">
+    <link rel="stylesheet" href="../../../resources/css/bootstrap.css">
+    <link rel="stylesheet" href="../../../resources/plugins/jquery-ui/jquery-ui.min.css">
+    <link rel="stylesheet" href="../../../resources/plugins/swiper-4.4.6/css/swiper.min.css">
+    <link rel="stylesheet" href="../../../resources/plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="../../../resources/css/style.css">
+    <!-- jquery -->
+    <script src="../../../resources/plugins/jquery/jquery.min.js"></script>
+    <!-- jquery -->
+    <script src="../../../resources/plugins/jquery-ui/jquery-ui.min.js"></script>
+    <!-- bootstrap -->
+    <script src="../../../resources/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- swiper -->
+    <script src="../../../resources/plugins/swiper-4.4.6/js/swiper.min.js"></script>
+    <!-- ui 관련 -->
+    <script src="../../../resources/js/ui.js"></script>
+</head>
+
+<body>
+    <div id="wrap">
+        <div id="header-block">
+            <!-- header include -->
+        </div>
+
+        <div id="content-block">
+            <div id="content">
+
+                <span data-depth1 hidden data-menu="util">이메일 문의</span>
+
+                <div id="visual" class="util">
+                    <div class="container">
+                        <h2>KG ETS</h2>
+                        <p>존경받는 기업 자랑스런 회사</p>
+                    </div>
+                </div>
+
+                <div id="nav-block">
+                    <!-- nav include -->
+                </div>
+                
+                <div id="view">
+                    <div class="container">
+                        <!-- 실 컨텐츠 -->
+                        <div class="title-wrap">
+                            <h3 class="title">이메일 문의</h3>
+                        </div>
+                        <article>
+                            <div class="qna">                                
+                                <div class="board-form">
+                                    <form action="">
+                                        <table class="table" summary="구분, 이름, E-mail, 제목, 문의내용, 첨부파일을 입력">
+                                            <caption>채용관련 이메일 문의 양식</caption>
+                                            <colgroup>
+                                                <col style="width:20%">
+                                                <col>
+                                            </colgroup>
+                                            <tbody>
+                                                <tr>
+                                                    <th class="text-center"><label for="inputCategory">구분</label></th>
+                                                    <td>
+                                                        <select name="gubun" id="inputCategory" class="form-control">
+                                                            <option value="">선택</option>
+                                                            <option value="waste">폐기물 처리관련 문의</option>
+                                                            <option value="product">제품관련 문의</option>
+                                                            <option value="steam">스팀공급 관련 문의</option>
+                                                            <option value="analysis">분석관련 문의</option>
+                                                            <option value="ir">IR관련 문의</option>
+                                                            <option value="work">채용관련 문의</option>
+                                                            <option value="etc">기타 문의</option>
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="text-center"><label for="inputName">이름</label></th>
+                                                    <td>
+                                                        <input type="text" id="inputName" class="form-control">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="text-center"><label for="inputEmail">E-mail</label></th>
+                                                    <td>
+                                                        <input type="text" id="inputEmail" class="form-control">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="text-center"><label for="inputSubject">제목</label></th>
+                                                    <td>
+                                                        <input type="text" id="inputSubject" class="form-control">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="text-center"><label for="inputContents">문의내용</label></th>
+                                                    <td>
+                                                        <textarea id="inputContents" class="form-control" cols="" rows=""></textarea>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="text-center"><label for="inputFile">문의내용</label></th>
+                                                    <td>
+                                                        <div class="filebox">
+                                                            <label for="inputFile" class="btn btn-dark">업로드</label>
+                                                            <input type="file" id="inputFile" class="upload-hidden">
+                                                            <input class="upload-name" value="파일선택" disabled="disabled">
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </form>
+                                </div>
+                                <div class="board-btns text-center">
+                                    <button class="btn btn-primary btn-lg min-width">전송</button>
+                                </div>
+                            </div>
+                        </article>
+                        <!-- //실 컨텐츠 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="footer-block">
+            <!-- footer include -->
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            var fileTarget = $('.filebox .upload-hidden');
+
+            fileTarget.on('change', function () { // 값이 변경되면 
+                if(window.FileReader){ // modern browser 
+                var filename = $(this)[0].files[0].name; 
+            } else { // old IE 
+                    var filename = $(this).val().split('/').pop().split('\\').pop(); // 파일명만 추출 
+                } // 추출한 파일명 삽입 
+                $(this).siblings('.upload-name').val(filename); 
+            }); 
+        });        
+    </script>
+</body>
+
+</html>

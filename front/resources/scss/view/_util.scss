@@ -1,0 +1,64 @@
+.qna{
+    select.form-control{width: auto;display: inline-block;}
+    textarea.form-control{height: 200px;}
+}
+@include media-breakpoint-down(md) {
+    .qna{
+        textarea.form-control{height: 140px;}
+    }
+}
+
+.reagent{    
+    text-align: center;
+    @at-root .jumbotron-reagent{background-image: url('../images/content/bg_jumbo_reagent.jpg');}
+    .diagram{background: #fafafa;padding: $content-padding-y 15px;margin-top: $content-padding-y;margin-bottom: $content-padding-y;}
+}
+@include media-breakpoint-down(md) {
+    .reagent{
+        .diagram{padding: $content-padding-y-md 15px;margin-top: $content-padding-y-md;margin-bottom: $content-padding-y-md;}
+    }
+}
+
+.join{
+    border-top: 1px solid #ddd;margin: 0 auto;
+    padding: $content-padding-y;
+    .row + .row{margin-top: 10px;}
+    .links{
+        text-align: center;margin-top: 30px;
+        a + a{position: relative;padding-left: 20px;margin-left: 15px;}
+        a + a::after{content: '';width: 1px;height: 14px;background-color: #ddd;display: block;position: absolute;left:0;top:50%;margin-top: -6px;}
+    }
+}
+@include media-breakpoint-down(md) {
+    .join{width: auto;padding: $content-padding-y-md 0;
+        .row {
+            .row + .row{margin-top: 10px;}
+        }
+    }
+}
+
+.login{
+    width: 600px;border-top: 1px solid #ddd;margin: 0 auto;
+    padding: $content-padding-y;
+    .row + .row{margin-top: 15px;}
+    .links{
+        text-align: center;margin-top: 30px;
+        a + a{position: relative;padding-left: 20px;margin-left: 15px;}
+        a + a::after{content: '';width: 1px;height: 14px;background-color: #ddd;display: block;position: absolute;left:0;top:50%;margin-top: -6px;}
+    }
+}
+@include media-breakpoint-down(md) {
+    .login{width: auto;padding: $content-padding-y-md 15px;
+    }
+}
+
+.search-wrap{
+    background: #f5f5f5;padding: $content-padding-y;margin-top: $content-padding-y;
+    h2{margin-bottom: 15px;}
+}
+@include media-breakpoint-down(md) {
+    .search-wrap{
+        padding: 15px;
+        .row .col-12{margin: 0;}
+    }
+}

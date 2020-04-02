@@ -11,7 +11,7 @@ $gray-200: #e9ecef !default;
 $gray-300: #ddd !default;
 $gray-400: #ced4da !default;
 $gray-500: #adb5bd !default;
-$gray-600: #6c757d !default;
+$gray-600: #888888 !default;
 $gray-700: #4b4e51 !default;
 $gray-800: #343a40 !default;
 $gray-900: #212529 !default;
@@ -73,6 +73,7 @@ $info:          $cyan !default;
 $warning:       $yellow !default;
 $danger:        $red !default;
 $light:         $gray-300 !default;
+$gray:          $gray-600 !default;
 $dark:          $gray-700 !default;
 
 $theme-colors: () !default;
@@ -86,6 +87,7 @@ $theme-colors: map-merge(
     "warning":    $warning,
     "danger":     $danger,
     "light":      $light,
+    "gray":       $gray,
     "dark":       $dark
   ),
   $theme-colors
@@ -483,9 +485,9 @@ $input-border-color:                    $gray-400 !default;
 $input-border-width:                    $input-btn-border-width !default;
 $input-box-shadow:                      inset 0 1px 1px rgba($black, .075) !default;
 
-$input-border-radius:                   $border-radius !default;
-$input-border-radius-lg:                $border-radius-lg !default;
-$input-border-radius-sm:                $border-radius-sm !default;
+$input-border-radius:                   0 !default;
+$input-border-radius-lg:                0 !default;
+$input-border-radius-sm:                0!default;
 
 $input-focus-bg:                        $input-bg !default;
 $input-focus-border-color:              lighten($component-active-bg, 25%) !default;
@@ -883,18 +885,18 @@ $popover-font-size:                 $font-size-sm !default;
 $popover-bg:                        $white !default;
 $popover-max-width:                 276px !default;
 $popover-border-width:              $border-width !default;
-$popover-border-color:              rgba($black, .2) !default;
+$popover-border-color:              $dark !default;
 $popover-border-radius:             $border-radius-lg !default;
 $popover-inner-border-radius:       subtract($popover-border-radius, $popover-border-width) !default;
-$popover-box-shadow:                0 .25rem .5rem rgba($black, .2) !default;
+$popover-box-shadow:                .25rem .25rem .5rem rgba($black, .2) !default;
 
-$popover-header-bg:                 darken($popover-bg, 3%) !default;
-$popover-header-color:              $headings-color !default;
+$popover-header-bg:                 $dark !default;
+$popover-header-color:              $white !default;
 $popover-header-padding-y:          .5rem !default;
 $popover-header-padding-x:          .75rem !default;
 
 $popover-body-color:                $body-color !default;
-$popover-body-padding-y:            $popover-header-padding-y !default;
+$popover-body-padding-y:            .75rem !default;
 $popover-body-padding-x:            $popover-header-padding-x !default;
 
 $popover-arrow-width:               1rem !default;
@@ -924,7 +926,7 @@ $toast-header-border-color:         rgba(0, 0, 0, .05) !default;
 
 // Badges
 
-$badge-font-size:                   75% !default;
+$badge-font-size:                   85% !default;
 $badge-font-weight:                 $font-weight-bold !default;
 $badge-padding-y:                   .25em !default;
 $badge-padding-x:                   .4em !default;

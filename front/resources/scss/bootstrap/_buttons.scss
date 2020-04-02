@@ -138,3 +138,11 @@ input[type="button"] {
     width: 100%;
   }
 }
+
+
+@include media-breakpoint-down(md) {
+  .btn {
+    font-size: .875rem;
+  }
+  .btn-lg{font-size: 1.05rem;}
+}

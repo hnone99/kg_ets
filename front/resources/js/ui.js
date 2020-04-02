@@ -44,10 +44,11 @@ var Header = Header || {};
         Header._gnb = Header._gnb || {};
 
         Header._win._wLimit = 992;
+        Header._elHeight = Header.el.header.height();
 
-        Header.el.depth1 = Header.el.depth1.text();
-        Header.el.depth2 = Header.el.depth2.text();
-        Header.el.depth3 = Header.el.depth3.text();
+        Header.el.depth1Text = Header.el.depth1.text();
+        Header.el.depth2Text = Header.el.depth2.text();
+        Header.el.depth3Text = Header.el.depth3.text();
 
         var agent = navigator.userAgent.toLowerCase();
         if ((navigator.appName === 'Netscape' && agent.indexOf('trident') !== -1) || (agent.indexOf("msie") !== -1)) {
@@ -63,7 +64,15 @@ var Header = Header || {};
             setTimeout(function() {
                 Header.el.title.addClass('active');
             }, 500);
-        }        
+        }
+
+        $('[data-toggle="popover"]').popover({
+            trigger: 'focus'
+        });
+        
+        $('[data-datepicker]').datepicker({
+            dateFormat: "yy-mm-dd"
+        });
     };
 
     Header.siteMap = function() {
@@ -106,8 +115,8 @@ var Header = Header || {};
             }else{
                 if(Header.el.html.hasClass('header-fixed')) Header.el.html.removeClass('header-fixed');
             }
-        };
-    };
+        };        
+    };    
 
     Header.top = function() {
         var el = Header.el.top;
@@ -136,22 +145,26 @@ var Header = Header || {};
         el = el.find('.focus');
 
         if(Header.el.depth1.length > 0){
-            Header.el.nav.find('.dep1 .ing').text(Header.el.depth1);
-            Header.el.gnb.find('.depth1').clone().appendTo(Header.el.nav.find('.dep1 ul'));
+            var dataMenu = Header.el.depth1.attr('data-menu');
+            Header.el.nav.addClass(dataMenu); 
+            if(Header.el.depth1.attr('data-menu') === 'util'){
+                Header.el.html.addClass('util-pages');
+            }
+            else{
+                Header.el.gnb.find('.depth1').clone().appendTo(Header.el.nav.find('.dep1 ul'));
+            }
+            Header.el.nav.find('.dep1 .ing').text(Header.el.depth1Text);
         }
         if(Header.el.depth2.length > 0){
-            Header.el.nav.find('.dep2 .ing').text(Header.el.depth2);
+            Header.el.nav.find('.dep2').show();
+            Header.el.nav.find('.dep2 .ing').text(Header.el.depth2Text);
             Header.el.gnb.find('.depth1.active .list > li').clone().appendTo(Header.el.nav.find('.dep2 ul'));
         }
         if(Header.el.depth3.length > 0){
-            Header.el.nav.find('.dep3 .ing').text(Header.el.depth3);
+            Header.el.nav.find('.dep3').show();
+            Header.el.nav.find('.dep3 .ing').text(Header.el.depth3Text);
             Header.el.gnb.find('.list > li.active li').clone().appendTo(Header.el.nav.find('.dep3 ul'));
         }
-        else{
-            Header.el.nav.find('.dep3').hide();
-        }
-
-        //Header.el.gnb.find('.depth1.active')
 
         Header._nav._isNavOpen = false;       
         el.on('click', function(e) {
@@ -174,17 +187,17 @@ var Header = Header || {};
         el.subMenuEl = el.subMenu.find('> li > a');
 
         el.navItemEl.each(function(idx,element){
-            if($(this).text() === Header.el.depth1){
+            if($(this).text() === Header.el.depth1Text){
                 $(element).closest('.depth1').addClass('active');
                 $(element).closest('.depth1').find('.list > li > a').each(function(idx,el){
-                    if($(this).text() === Header.el.depth2){
+                    if($(this).text() === Header.el.depth2Text){
                         $(this).closest('li').addClass('active');
                     }
                 });
             }
         });
         el.subMenuEl.each(function(idx){
-            if($(this).text() === Header.el.depth1){
+            if($(this).text() === Header.el.depth1Text){
                 $(this).addClass('active');
             }
         });
@@ -199,18 +212,12 @@ var Header = Header || {};
         });
         el.navItem.on('mouseenter', function(e) {
             var $el = $(e.currentTarget);
-            if(!$el.hasClass('nav-img-item')){
-                if(Header._gnb._isOpen) return;
-                Header._gnb.viewNav();
-            }else{
-                Header._gnb.viewNav(true);
-            }
+            if(Header._gnb._isOpen) return;
+            Header._gnb.viewNav();
         });
         el.navItem.on('mouseleave', function(e) {
             var $el = $(e.currentTarget);
-            if(!$el.hasClass('nav-img-item')){
-                Header._gnb.viewNav(true);
-            }
+            Header._gnb.viewNav(true);
         });
         Header._gnb.viewNav = function(b) {
             var bool = (b) ? b : false;
@@ -231,33 +238,61 @@ var Header = Header || {};
     Header.scrollVisible = function() {
         var $win = $(window);
         var _scrollTop = 0;
-        var $article = $('[scroll-visible]');
+        var $article = $('[scroll-visible]'); 
         $win.on('scroll.contents', function() {
-        _scrollTop = $win.scrollTop();
-        $.each($article, function(i, el) {
-            var $el = $(el);
-            if(_scrollTop > $el.offset().top - $win.height() / 2){
-            if($el.hasClass('ready')){
-                $el.addClass('showup');
-            }
-            }
-        });
+            _scrollTop = $win.scrollTop();
+            $.each($article, function(i, el) {
+                var $el = $(el);
+                if($('#main').length > 0){
+                    if(_scrollTop > $el.offset().top - $win.height() / 1){
+                        $el.addClass('showup');
+                    }                    
+                }
+                else{
+                    if(_scrollTop > $el.offset().top - $win.height() / 2){
+                        $el.addClass('showup');
+                    }
+                }
+                
+            });
         }).trigger('scroll.contents');
     };
+
     Header.addEvent = function() {
-        Header.el.dim.on('click', function(e) {
-            e.preventDefault();
-            if(Header._search._isOpen){
-                Header._search.viewSearch(true);
+        Header._scrollTop = 0;
+        Header._exScrollTop = null;
+        Header._didScroll = false;
+
+        Header.mainScroll = function() {
+            Header._scrollTop = Header.el.win.scrollTop();
+            Header.scroll();
+            Header._exScrollTop = Header._scrollTop;
+        };
+        
+        Header.scroll = function() {
+            if(Header._exScrollTop === null) return;
+            if(Header._exScrollTop > Header._scrollTop){
+                Header.el.html.removeClass('hide-gnb');
+            }else{
+                if(Header._scrollTop > Header._elHeight){
+                    Header.el.html.addClass('hide-gnb');
+                }
             }
-        });
+        };
+        setInterval(function() {
+            if(Header._didScroll){
+                Header.mainScroll();
+                Header._didScroll = false;
+            }
+        }, 250);
+
         Header.el.win.on('resize.header', function() {
             Header.el.html.addClass('is-resize');
             if(Header.el.top.length > 0) Header._top.resize();
             if(Header.el.header.length > 0) Header._headerFixed.resize();
             Header.el.html.removeClass('is-resize');
         }).on('scroll.header', function(e) {
-            //Header._didScroll = true;
+            Header._didScroll = true;
             if(Header.el.top.length > 0) Header._top.scroll();         
             if(Header.el.header.length > 0) Header._headerFixed.scroll();         
         }).on('click', function(e) {
@@ -267,7 +302,7 @@ var Header = Header || {};
                     Header.el.nav.find('.focus').removeClass('active');
                 }
             }
-        }).trigger('resize.header');
+        }).trigger('resize.header').trigger('scroll.header');        
     };
 
     $(document).ready(function() {
@@ -281,6 +316,6 @@ var Header = Header || {};
         // 개발시 setTimeout 삭제 필요
         setTimeout(function(){
             Header.init();
-        },50)
+        },50);
     });
 }(jQuery);
