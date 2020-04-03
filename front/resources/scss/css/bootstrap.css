@@ -2789,11 +2789,16 @@ textarea.form-control {
   text-decoration: none;
 }
 
+.btn .btn {
+  padding-bottom: .405rem;
+}
+
 .btn:focus, .btn.focus {
   outline: 0;
 }
 
 .btn.disabled, .btn:disabled {
+  cursor: default;
   opacity: 0.65;
 }
 
@@ -3461,6 +3466,7 @@ fieldset:disabled a.btn {
 .btn-link:disabled, .btn-link.disabled {
   color: #888888;
   pointer-events: none;
+  cursor: default;
 }
 
 .btn-lg, .btn-group-lg > .btn {
@@ -5172,20 +5178,21 @@ a.close.disabled {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 1rem 1rem;
+  padding: 1.5rem 1.5rem;
   border-bottom: 1px solid #ddd;
   border-top-left-radius: calc(0.3rem - 1px);
   border-top-right-radius: calc(0.3rem - 1px);
 }
 
 .modal-header .close {
-  padding: 1rem 1rem;
-  margin: -1rem -1rem -1rem auto;
+  padding: 1.5rem 1.5rem;
+  margin: -1.5rem -1.5rem -1.5rem auto;
 }
 
 .modal-title {
   margin-bottom: 0;
   line-height: 1.5;
+  font-size: 1.15em;
 }
 
 .modal-body {
@@ -5193,7 +5200,7 @@ a.close.disabled {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
-  padding: 1rem;
+  padding: 1.5rem;
 }
 
 .modal-footer {
@@ -5208,7 +5215,7 @@ a.close.disabled {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  padding: 1rem;
+  padding: 1.5rem;
   border-top: 1px solid #ddd;
   border-bottom-right-radius: calc(0.3rem - 1px);
   border-bottom-left-radius: calc(0.3rem - 1px);
@@ -5224,7 +5231,7 @@ a.close.disabled {
 
 @media (min-width: 576px) {
   .modal-dialog {
-    max-width: 500px;
+    max-width: 600px;
     margin: 1.75rem auto;
   }
   .modal-dialog-scrollable {

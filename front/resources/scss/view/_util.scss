@@ -62,3 +62,74 @@
         .row .col-12{margin: 0;}
     }
 }
+
+.article-reagent-view{    
+    .board-view .board-row{
+        .table,
+        .table th,
+        .table td{border-color: #aaa;}
+    }
+    .fas{font-size: 20px;vertical-align: middle;}
+    .active .fas{color: $danger;margin-left: 2px;}
+}
+
+.notice-box{border: 1px solid #ddd;padding: $content-padding-y;height: 500px;overflow-x: hidden;}
+
+.cd-multi-steps {
+	margin: 0 auto 40px;border-radius: .25em;background-color: transparent;text-align: center;
+
+	li {
+		display: inline-block;position: relative;float: none;margin: 0.4em 40px 0.4em 0;
+        > * {
+            /* single step */
+            display: inline-block;
+            z-index: 1;
+            padding: .6em 1.25em .7em;
+            border-radius: .25em;
+            background-color: $light;
+        }
+		&::after {
+			display: inline-block;
+            position: absolute;
+            content: '';
+            margin: 0; 
+            height: 4px;
+            background: $light;
+            width: 100%;
+            top: 50%;
+            left: 100%;
+            transform: translate(-1px,-50%);
+		}
+        &:last-of-type {
+            margin-right: 0;
+        }
+		&:last-of-type::after {
+			display: none;
+        }
+        &.visited::after {
+            background-color: $dark;
+        }
+        &.current > *,
+        &.visited > *{
+            position: relative;
+            color: #fff;
+            background-color: $dark;
+        }
+        i{margin-right: 4px;}
+	}
+}
+
+.dual-list-wrap{
+    > .row{align-items: center;}
+    .dual-list{
+        background-color:#faf9fa; border:1px solid #ddd; padding:30px; 
+        .box{background-color:#fff; border:1px solid #ddd; height:450px; overflow-y:scroll;
+            .table thead th{border-top: 0;border-bottom-width: 1px;text-align: center;}
+            .table th,
+            .table td{padding: 0.5rem;vertical-align: middle;}
+            .form-control{font-size: 15px;}
+        }
+        
+    }
+    .move{text-align: center;font-size: 36px;color: #aaa;}
+}

@@ -24,6 +24,10 @@
     text-decoration: none;
   }
 
+  .btn{
+    padding-bottom: .405rem;
+  }
+
   &:focus,
   &.focus {
     outline: 0;
@@ -33,6 +37,7 @@
   // Disabled comes first so active can properly restyle
   &.disabled,
   &:disabled {
+    cursor: default;
     opacity: $btn-disabled-opacity;
     @include box-shadow(none);
   }
@@ -96,6 +101,7 @@ fieldset:disabled a.btn {
   &.disabled {
     color: $btn-link-disabled-color;
     pointer-events: none;
+    cursor: default;
   }
 
   // No need for an active state here
