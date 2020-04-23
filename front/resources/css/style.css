@@ -1289,7 +1289,7 @@ html.open-sitemap .sitemap-wrap {
 }
 
 .summary ul li .heading {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 700;
   display: block;
 }
@@ -2997,6 +2997,102 @@ button {
   }
   .policy .action p {
     height: 110px;
+  }
+}
+
+.rnd {
+  text-align: center;
+}
+
+.rnd .jumbotron-rnd {
+  background-image: url("../images/content/bg_jumbo_rnd.jpg");
+}
+
+.rnd .txt {
+  line-height: 2;
+}
+
+.rnd .summary {
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  margin-top: 60px;
+}
+
+.rnd .license {
+  border-top: 1px solid #ddd;
+  margin-top: 60px;
+  padding-top: 60px;
+}
+
+.rnd .license [class^=col-] {
+  margin-bottom: 20px;
+}
+
+.rnd .license .item {
+  padding: 20px;
+  border: 1px solid #ddd;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+}
+
+.rnd .license .item .img {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 28%;
+          flex: 0 0 28%;
+  max-width: 28%;
+}
+
+.rnd .license .item .img img {
+  border: 1px solid #ddd;
+}
+
+.rnd .license .item .info {
+  text-align: left;
+  padding-left: 30px;
+}
+
+.rnd .license .item .info strong {
+  display: block;
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+@media (max-width: 991.98px) {
+  .rnd .summary {
+    margin-top: 30px;
+  }
+  .rnd .license {
+    margin-top: 30px;
+    padding-top: 30px;
+  }
+  .rnd .license [class^=col-] {
+    margin-bottom: 10px;
+  }
+  .rnd .license .item {
+    padding: 15px;
+    border: 1px solid #ddd;
+  }
+  .rnd .license .item .img {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 24%;
+            flex: 0 0 24%;
+    max-width: 24%;
+  }
+  .rnd .license .item .info {
+    padding-left: 15px;
+  }
+  .rnd .license .item .info strong {
+    font-size: 16px;
+    margin-bottom: 6px;
+  }
+  .rnd .license .item .info p {
+    line-height: 1.5;
   }
 }
 
