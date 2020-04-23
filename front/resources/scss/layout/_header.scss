@@ -37,6 +37,7 @@
             }               
         }        
     }
+    .quick {text-decoration: none;}
     .btn-lang{
         color: #fff;position: relative;text-decoration: none;font-size: 15px;vertical-align: top;font-weight: 500;
         &::before{
@@ -104,6 +105,7 @@ html:not(.open-sitemap) #header:hover{
     .logo {
         a{background-image: url('../images/common/logo_b.png');}
     }
+    .quick {color: $dark;}
     .btn-lang{
         color: $dark;
         & i{color: $dark;}
@@ -136,12 +138,16 @@ html:not(.open-sitemap) #header:hover{
         #gnb{display: none;}
     }
 }
+@include media-breakpoint-down(sm) {
+    
+}
 html.open-gnb-sub,
 html.header-over{
     #header {
         .logo {
             a{background-image: url('../images/common/logo_b.png');}
         }
+        .quick {color: $dark;}
         .btn-lang{
             color: $dark;
             & i{color: $dark;}
@@ -177,6 +183,7 @@ html.header-fixed{
         .logo {
             a{height: 56px;background-image: url('../images/common/logo_b.png');}
         }
+        .quick {color: $dark;}
         .btn-lang{
             color: $dark;
             & i{color: $dark;}

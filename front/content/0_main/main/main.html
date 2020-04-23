@@ -240,6 +240,24 @@
                             </div>
                         </div>                        
                     </section>
+                    <div class="quick-menu" scroll-visible>
+                        <ul>
+                            <li>
+                                <a href="../../../content/5_util/reagent/news_info.html" class="quick">
+                                    <div>
+                                        시약분류<span>시스템</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="http://elc.kgets.co.kr" class="quick" title="새 창">
+                                    <div>
+                                        전자계약<span>시스템</span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -321,9 +339,11 @@ $(window).on('load',function () {
         slidesPerView: 'auto',
         centeredSlides: true,
         spaceBetween: 40,
+        grabCursor: true,
         pagination: {
             el: '.swiper-pagination-products',
             type: 'progressbar',
+            clickable: true
         },
         breakpoints: {
             991: {

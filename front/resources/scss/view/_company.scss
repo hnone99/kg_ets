@@ -10,10 +10,9 @@
         > div{margin-top: 15px;}
     }
 }
-
 @include media-breakpoint-down(md) {
     .ceo{        
-        .name{font-size: 16px;margin-bottom: 15px;}
+        .name{font-size: 16px;margin: $content-padding-y-md 0 15px;}
         > .txt{line-height: 1.6;}        
         .summary{margin: $content-padding-y-md 0;}
         .sign{font-size: 18px;margin-top: 40px;}
@@ -44,7 +43,7 @@
         .year{text-align: right;}
         .cont{text-align: right;}
     }
-    li.focus::after{ background-color: $primary; transform: scale(1.1); -webkit-transform: scale(1.1); -moz-transform: scale(1.1); -ms-transform: scale(1.1); -o-transform: scale(1.1); }
+    li.focus::after{ background-color: $primary; transform: scale(1.6); -webkit-transform: scale(1.6); -moz-transform: scale(1.6); -ms-transform: scale(1.6); -o-transform: scale(1.6); }
 }
 @include media-breakpoint-down(md) {
     .history{
@@ -118,67 +117,6 @@
             [class^=col-]{padding-left: 5px;padding-right: 5px;margin-bottom: 10px;}
             strong{font-size: 16px;}
             p{height: 110px;}
-        }
-    }
-}
-
-
-@include media-breakpoint-down(md) {
-    .ceo{        
-        .name{font-size: 16px;margin: $content-padding-y-md 0 15px;}
-        > .txt{line-height: 1.6;}        
-        .summary{margin: $content-padding-y-md 0;}
-        .sign{font-size: 18px;margin-top: 40px;}
-    }
-}
-
-.history{
-    ol{
-        position: relative;padding: 100px 0;
-        &::before{content: '';display: block;width: 1px;height: 100%;background-color: #ddd;position: absolute;left:50%;top: 0;}
-    }
-    li{
-        padding-bottom: $content-padding-y;padding-left: calc(50% + 85px);position: relative;
-        &::before{content: '';display: block;width: 65px;height: 1px;background-color: #ddd;position: absolute;left:50%;top: 22px;}
-        &::after{ content: ''; display: block; width: 8px; height: 8px; background-color: #ddd; position: absolute; left:50%; top: 22px; margin: -4px 0 0 -4px; border-radius: 50px; -webkit-border-radius: 50px; -moz-border-radius: 50px; -ms-border-radius: 50px; -o-border-radius: 50px; transition: all .2s; -webkit-transition: all .2s; -moz-transition: all .2s; -ms-transition: all .2s; -o-transition: all .2s; }
-        .year{font-family: $font-family-number;color: $primary;font-size: 30px;font-weight: 700;margin-bottom: 20px;position: relative;}
-        .cont{
-            p{
-                position: relative;padding-left: 15px;
-                &::before{content: '';display: inline-block;width: 2px;height: 2px;background-color: #777;vertical-align: middle;margin-right: 8px;}
-                & + p{margin-top: 15px;}
-            }
-        }
-    }
-    li.left{
-        padding-left: 0;padding-right: calc(50% + 85px);
-        &::before{left: auto;right:50%;}
-        .year{text-align: right;}
-        .cont{text-align: right;}
-    }
-    li.focus::after{ background-color: $primary; transform: scale(1.1); -webkit-transform: scale(1.1); -moz-transform: scale(1.1); -ms-transform: scale(1.1); -o-transform: scale(1.1); }
-}
-@include media-breakpoint-down(md) {
-    .history{
-        ol{
-            position: relative;padding: 50px 0;
-            &::before{left:15px;top: 0;}
-        }
-        li{
-            padding-bottom: $content-padding-y-md;padding-left:40px;
-            &::before{width: 17px;top: 14px;left: 15px;}
-            &::after{top: 14px;left: 15px;}
-            .year{font-size: 20px;margin-bottom: 10px;}
-            .cont p{
-                padding-left: 0;
-                & + p{margin-top: 6px;}
-            }
-        }
-        li.left{
-            padding-right: 0;padding-left: 40px;
-            &::before{left: 15px;right:auto;}
-            .year{text-align: left;}
-            .cont{text-align: left;}
         }
     }
 }
@@ -289,7 +227,7 @@
             -moz-transition: all .2s .25s;
             -ms-transition: all .2s .25s;
             -o-transition: all .2s .25s;
-}
+        }
         &.collapsed::before{ transform: rotate(180deg); -webkit-transform: rotate(180deg); -moz-transform: rotate(180deg); -ms-transform: rotate(180deg); -o-transform: rotate(180deg);}
     }
     .name{

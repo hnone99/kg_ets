@@ -55,12 +55,12 @@
                         <div class="title-wrap">
                             <h3 class="title">시약 접수 요청</h3>
                         </div>
-                        <article>
+                        <article class="article-reagent-write2">
                             <nav class="step">
-                                <ol class="cd-multi-steps text-center custom-icons">
-                                    <li class="visited"><span><i class="fas fa-pen"></i> 필수정보 입력</span></li>
-                                    <li class="current"><span><i class="fas fa-search"></i> 리스트 검색</span></li>
-                                    <li><span><i class="fas fa-user-check"></i> 검토요청</span></li>
+                                <ol class="cd-multi-steps">
+                                    <li class="visited"><span><i class="fas fa-pen"></i> 필수정보 <br class="d-md-none">입력</span></li>
+                                    <li class="current"><span><i class="fas fa-search"></i> 리스트 <br class="d-md-none">검색</span></li>
+                                    <li><span><i class="fas fa-user-check"></i> 검토<br class="d-md-none">요청</span></li>
                                 </ol>
                             </nav>
                             <div class="tab">
@@ -159,121 +159,135 @@
                                             </div>
                                             <div class="col-12 col-md-1">
                                                 <div class="move">
-                                                    <div>
-                                                        <a href="#"><i class="fas fa-caret-square-right"></i></a>
+                                                    <!-- pc -->
+                                                    <div class="d-none d-md-block">
+                                                        <div>
+                                                            <a href="#"><i class="fas fa-caret-square-right"></i></a>
+                                                        </div>
+                                                        <div>
+                                                            <a href="#"><i class="fas fa-caret-square-left"></i></a>
+                                                        </div>
                                                     </div>
-                                                    <div>
-                                                        <a href="#"><i class="fas fa-caret-square-left"></i></a>
+                                                    <!-- mobile -->
+                                                    <div class="d-md-none">
+                                                        <span>
+                                                            <a href="#"><i class="fas fa-caret-square-down"></i></a>
+                                                        </span>
+                                                        <span>
+                                                            <a href="#"><i class="fas fa-caret-square-up"></i></a>
+                                                        </span>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="col-12 col-md-6">
                                                 <div class="dual-list">
                                                     <div class="box">
-                                                        <table class="table">
-                                                            <colgroup>
-                                                                <col style="width:34%">        
-                                                                <col style="width:10%">
-                                                                <col style="width:18%">        
-                                                            </colgroup>
-                                                            <thead>
-                                                                <tr>
-                                                                    <th>시약명</th>        
-                                                                    <th>갯수</th>
-                                                                    <th>배출량</th>        
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody id="plus_detail">
-                                                                <tr>
-                                                                    <td>
-                                                                        <div class="custom-control custom-checkbox">
-                                                                            <input type="checkbox" id="chk1_3" name="" class="custom-control-input">
-                                                                            <label class="custom-control-label" for="chk1_3">수산화나트륨(가성소다)</label>
-                                                                        </div>
-                                                                    </td>
-                                                                    <td><input type="text" class="form-control"></td>
-                                                                    <td>
-                                                                        <select class="form-control">
-                                                                            <option value="">선택</option>
-
-                                                                            <option value="10g">10g</option>
-
-                                                                            <option value="50g">50g</option>
-
-                                                                            <option value="100g">100g</option>
-
-                                                                            <option value="500g">500g</option>
-
-                                                                            <option value="1kg">1kg</option>
-
-                                                                            <option value="5kg">5kg</option>
-
-                                                                            <option value="10kg">10kg</option>
-
-                                                                            <option value="20kg">20kg</option>
-
-                                                                            <option value="100kg">100kg</option>
-
-                                                                            <option value="500mL">500mL</option>
-
-                                                                            <option value="1L">1L</option>
-
-                                                                            <option value="4L">4L</option>
-
-                                                                            <option value="10L">10L</option>
-
-                                                                            <option value="20L">20L</option>
-
-                                                                            <option value="50L">50L</option>
-                                                                        </select>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>
-                                                                        <div class="custom-control custom-checkbox">
-                                                                            <input type="checkbox" id="chk1_4" name="" class="custom-control-input">
-                                                                            <label class="custom-control-label" for="chk1_4">수산화나트륨(가성소다)</label>
-                                                                        </div>
-                                                                    </td>
-                                                                    <td><input type="text" class="form-control"></td>
-                                                                    <td>
-                                                                        <select class="form-control">
-                                                                            <option value="">선택</option>
-
-                                                                            <option value="10g">10g</option>
-
-                                                                            <option value="50g">50g</option>
-
-                                                                            <option value="100g">100g</option>
-
-                                                                            <option value="500g">500g</option>
-
-                                                                            <option value="1kg">1kg</option>
-
-                                                                            <option value="5kg">5kg</option>
-
-                                                                            <option value="10kg">10kg</option>
-
-                                                                            <option value="20kg">20kg</option>
-
-                                                                            <option value="100kg">100kg</option>
-
-                                                                            <option value="500mL">500mL</option>
-
-                                                                            <option value="1L">1L</option>
-
-                                                                            <option value="4L">4L</option>
-
-                                                                            <option value="10L">10L</option>
-
-                                                                            <option value="20L">20L</option>
-
-                                                                            <option value="50L">50L</option>
-                                                                        </select>
-                                                                    </td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
+                                                        <div class="table-responsive">
+                                                            <table class="table">
+                                                                <colgroup>
+                                                                    <col style="width:34%">        
+                                                                    <col style="width:10%">
+                                                                    <col style="width:17%">        
+                                                                </colgroup>
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>시약명</th>        
+                                                                        <th>갯수</th>
+                                                                        <th>배출량</th>        
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody id="plus_detail">
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div class="custom-control custom-checkbox">
+                                                                                <input type="checkbox" id="chk1_3" name="" class="custom-control-input">
+                                                                                <label class="custom-control-label" for="chk1_3">수산화나트륨(가성소다)</label>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td><input type="text" class="form-control text-center"></td>
+                                                                        <td>
+                                                                            <select class="form-control">
+                                                                                <option value="">선택</option>
+    
+                                                                                <option value="10g">10g</option>
+    
+                                                                                <option value="50g">50g</option>
+    
+                                                                                <option value="100g">100g</option>
+    
+                                                                                <option value="500g">500g</option>
+    
+                                                                                <option value="1kg">1kg</option>
+    
+                                                                                <option value="5kg">5kg</option>
+    
+                                                                                <option value="10kg">10kg</option>
+    
+                                                                                <option value="20kg">20kg</option>
+    
+                                                                                <option value="100kg">100kg</option>
+    
+                                                                                <option value="500mL">500mL</option>
+    
+                                                                                <option value="1L">1L</option>
+    
+                                                                                <option value="4L">4L</option>
+    
+                                                                                <option value="10L">10L</option>
+    
+                                                                                <option value="20L">20L</option>
+    
+                                                                                <option value="50L">50L</option>
+                                                                            </select>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div class="custom-control custom-checkbox">
+                                                                                <input type="checkbox" id="chk1_4" name="" class="custom-control-input">
+                                                                                <label class="custom-control-label" for="chk1_4">수산화나트륨(가성소다)</label>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td><input type="text" class="form-control text-center"></td>
+                                                                        <td>
+                                                                            <select class="form-control">
+                                                                                <option value="">선택</option>
+    
+                                                                                <option value="10g">10g</option>
+    
+                                                                                <option value="50g">50g</option>
+    
+                                                                                <option value="100g">100g</option>
+    
+                                                                                <option value="500g">500g</option>
+    
+                                                                                <option value="1kg">1kg</option>
+    
+                                                                                <option value="5kg">5kg</option>
+    
+                                                                                <option value="10kg">10kg</option>
+    
+                                                                                <option value="20kg">20kg</option>
+    
+                                                                                <option value="100kg">100kg</option>
+    
+                                                                                <option value="500mL">500mL</option>
+    
+                                                                                <option value="1L">1L</option>
+    
+                                                                                <option value="4L">4L</option>
+    
+                                                                                <option value="10L">10L</option>
+    
+                                                                                <option value="20L">20L</option>
+    
+                                                                                <option value="50L">50L</option>
+                                                                            </select>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -282,15 +296,112 @@
                                             <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modalUpload">일괄 업로드</button>
                                         </div>
                                         <!-- 업로드 -->
-
                                     </div>
                                 </div>
                                 <div id="t2" class="tab-pane fade" role="tabpanel">
+                                    <div class="board-form">
+                                        <table class="table">
+                                            <colgroup>
+                                                <col style="width:17%">
+                                                <col style="width:33%">
+                                                <col style="width:17%">
+                                                <col style="width:33%">
+                                            </colgroup>
+                                            <tbody>
+                                                <tr>
+                                                    <th>시약명</th>
+                                                    <td colspan="3">
+                                                        <input type="text" class="form-control" placeholder="시약명의 최소 길이는 3자 ( 이유는 검색시에 3자 이상 입력하게 되어 있어서 입니다. )">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th>갯수</th>
+                                                    <td>
+                                                        <input type="number" class="form-control" placeholder="수량을 입력하세요.">
+                                                    </td>
+                                                    <th>배출량</th>
+                                                    <td>
+                                                        <select class="form-control">
+                                                            <option value="">선택</option>
+
+                                                            <option value="10g">10g</option>
+
+                                                            <option value="50g">50g</option>
+
+                                                            <option value="100g">100g</option>
+
+                                                            <option value="500g">500g</option>
+
+                                                            <option value="1kg">1kg</option>
+
+                                                            <option value="5kg">5kg</option>
+
+                                                            <option value="10kg">10kg</option>
+
+                                                            <option value="20kg">20kg</option>
+
+                                                            <option value="100kg">100kg</option>
+
+                                                            <option value="500mL">500mL</option>
+
+                                                            <option value="1L">1L</option>
+
+                                                            <option value="4L">4L</option>
+
+                                                            <option value="10L">10L</option>
+
+                                                            <option value="20L">20L</option>
+
+                                                            <option value="50L">50L</option>
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th>특이사항</th>
+                                                    <td colspan="3">
+                                                        <input type="text" class="form-control" placeholder="시약 특이사항을 기재하세요.">
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="btns mt-4">
+                                        <button type="button" class="btn btn-dark btn-lg min-width"><i class="fas fa-arrow-alt-circle-down"></i> 입력</button>
+                                    </div>
+                                    <div class="board-list mt-5">
+                                        <table class="table">
+                                            <colgroup>
+                                                <col>
+                                                <col style="width:6%">
+                                                <col style="width:10%">
+                                                <col style="width:20%">
+                                                <col style="width:11%">
+                                            </colgroup>
+                                            <thead>
+                                                <tr>
+                                                    <th>시약명</th>
+                                                    <th>갯수</th>
+                                                    <th>배출량</th>
+                                                    <th>특이사항</th>
+                                                    <th>비고</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
                             <div class="btns text-center">
-                                <button type="button" class="btn btn-gray btn-lg min-width">이전</button>
-                                <button type="button" class="btn btn-primary btn-lg min-width">다음</button>
+                                <button type="button" class="btn btn-gray btn-lg min-width" onclick="window.location.href='reagent_write_step1.html'">이전</button>
+                                <button type="button" class="btn btn-primary btn-lg min-width" onclick="window.location.href='reagent_write_step3.html'">다음</button>
                                 <button type="button" class="btn btn-outline-dark btn-lg min-width">중간저장</button>
                             </div>
                         </article>
@@ -342,7 +453,7 @@
 
                     <table class="table table-center mt-4">
                         <colgroup>
-                            <col width="">
+                            <col>
                             <col style="width:120px">
                             <col style="width:80px">
                         </colgroup>

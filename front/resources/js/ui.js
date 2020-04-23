@@ -171,7 +171,7 @@ var Header = Header || {};
             e.preventDefault();
             Header._nav._isNavOpen = true;
             if($(this).hasClass('active')){
-                el.removeClass('active')
+                el.removeClass('active');
             }else{
                 el.removeClass('active');
                 $(this).addClass('active');
@@ -306,12 +306,11 @@ var Header = Header || {};
     };
 
     $(document).ready(function() {
-       
         // 퍼블리싱 include
         // 개발시 삭제 필요
-        $('#header-block').load('../../../content/_include/header.html')
-        $('#footer-block').load('../../../content/_include/footer.html')
-        $('#nav-block').load('../../../content/_include/nav.html')
+        $('#header-block').load('../../../content/_include/header.html');
+        $('#footer-block').load('../../../content/_include/footer.html');
+        $('#nav-block').load('../../../content/_include/nav.html');
 
         // 개발시 setTimeout 삭제 필요
         setTimeout(function(){
