@@ -4760,4 +4760,66 @@ button {
   margin-bottom: 10px;
   font-size: 140%;
 }
+
+.html-error,
+.html-error body {
+  height: 100%;
+}
+
+.error {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  height: 100%;
+}
+
+.error strong {
+  font-size: 120px;
+  color: #ed0283;
+}
+
+.error em {
+  font-style: normal;
+  font-size: 22px;
+  margin-top: 20px;
+}
+
+.error p {
+  font-size: 20px;
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
+
+.error .btn {
+  width: 180px;
+}
+
+@media (max-width: 767.98px) {
+  .error strong {
+    font-size: 80px;
+  }
+  .error em {
+    ffont-size: 20px;
+    margin-top: 20px;
+  }
+  .error p {
+    font-size: 18px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+  }
+  .error .btn {
+    width: 140px;
+  }
+}
 /*# sourceMappingURL=style.css.map */
