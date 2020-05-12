@@ -33,15 +33,15 @@
         </div>
 
         <div id="content-block">
-            <div id="content">                
+            <div id="content">
 
                 <div id="main">
                     <section class="main-jumbotron" scroll-visible>
                         <div class="object">
                             <div class="o1"></div>
-                        </div>  
+                        </div>
                         <div class="swiper-container" id="swiper-jumbotron">
-                            <div class="swiper-wrapper">                            
+                            <div class="swiper-wrapper">
                                 <div class="swiper-slide">
                                     <div class="swiper-item" style="background-image:url(../../../resources/images/main/bg1_1.jpg);">
                                         <span class="main-title">TECNNOLOGY</span>
@@ -60,13 +60,13 @@
                                         <span class="main-subtitle">보다 나은 내일을 위해 <br>자연과 환경을 지키고 더 나은 미래의 가치를 <br class="d-md-block">생각하는 기업이 되겠습니다.</span>
                                     </div>
                                 </div>
-                            </div>                                
+                            </div>
                             <div class="swiper-pagination swiper-pagination-jumbotron"></div>
                         </div>
                         <p class="scroll">
                             DISCOVER
                             <span><i class="fas fa-chevron-down"></i></span>
-                        </p>                                       
+                        </p>
                     </section>
                     <section class="background sec-news" scroll-visible>
                         <div class="object">
@@ -110,7 +110,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>                        
+                        </div>
                     </section>
                     <section class="background sec-product" scroll-visible>
                         <div class="object">
@@ -199,14 +199,14 @@
                                                 </a>
                                             </div>
                                         </div>
-                                    </div>                                
+                                    </div>
                                 </div>
                                 <!-- Add Pagination -->
                                 <div class="swiper-pagination-wrap-products">
                                     <div class="swiper-pagination swiper-pagination-products"></div>
                                 </div>
                             </div>
-                        </div>                        
+                        </div>
                     </section>
                     <section class="background sec-company" scroll-visible>
                         <div class="object">
@@ -238,7 +238,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>                        
+                        </div>
                     </section>
                     <div class="quick-menu" scroll-visible>
                         <ul>
@@ -267,151 +267,235 @@
         </div>
     </div>
 
+    <!-- 팝업 -->
+    <div class="popupMainWrap">
+        <div class="backdrop"></div>
+        <div class="popupWrap">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-12 col-md-auto" data-cookie="c1">
+                    <div class="popupMain">
+                        <div class="img"><a href="#"><img src="../../../resources/images/content/img_product_eco500.png" alt=""></a></div>
+                        <div class="close"><a href="javascript:;"><i class="fas fa-times-circle"></i><span class="sr-only">팝업 닫기</span></a></div>
+                        <div class="today">
+                            <a href="javascript:;">오늘 하루 그만보기</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-auto" data-cookie="c2">
+                    <div class="popupMain">
+                        <div class="img"><a href="#"><img src="../../../resources/images/content/img_product_eco500.png" alt=""></a></div>
+                        <div class="close"><a href="javascript:;"><i class="fas fa-times-circle"></i><span class="sr-only">팝업 닫기</span></a></div>
+                        <div class="today">
+                            <a href="javascript:;">오늘 하루 그만보기</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //팝업 -->
+
  <script>
-     // ------------- VARIABLES ------------- //
-var ticking = false;
-var isFirefox = (/Firefox/i.test(navigator.userAgent));
-var isIe = (/MSIE/i.test(navigator.userAgent)) || (/Trident.*rv\:11\./i.test(navigator.userAgent));
-var scrollSensitivitySetting = 30; //Increase/decrease this number to change sensitivity to trackpad gestures (up = less sensitive; down = more sensitive) 
-var slideDurationSetting = 600; //Amount of time for which slide is "locked"
-var currentSlideNumber = 0;
-var totalSlideNumber = $(".background").length;
-
-// ------------- DETERMINE DELTA/SCROLL DIRECTION ------------- //
-function parallaxScroll(evt) {
-    if (isFirefox) {
-        //Set delta for Firefox
-        delta = evt.detail * (-120);
-    } else if (isIe) {
-        //Set delta for IE
-        delta = -evt.deltaY;
-    } else {
-        //Set delta for all other browsers
-        delta = evt.wheelDelta;
+    //팝업
+    function setCookie(cookieName, value, exdays){
+        var exdate = new Date();
+        exdate.setDate(exdate.getDate() + exdays);
+        var cookieValue = escape(value) + ((exdays==null) ? "" : "; expires=" + exdate.toGMTString());
+        document.cookie = cookieName + "=" + cookieValue;
     }
-
-    if (ticking != true) {
-        if (delta <= -scrollSensitivitySetting) {
-            //Down scroll
-            ticking = true;
-            if (currentSlideNumber !== totalSlideNumber - 1) {
-                currentSlideNumber++;
-                nextItem();
-            }
-            slideDurationTimeout(slideDurationSetting);
-        }
-        if (delta >= scrollSensitivitySetting) {
-            //Up scroll
-            ticking = true;
-            if (currentSlideNumber !== 0) {
-                currentSlideNumber--;
-            }
-            previousItem();
-            slideDurationTimeout(slideDurationSetting);
-        }
+    function deleteCookie(cookieName){
+        var expireDate = new Date();
+        expireDate.setDate(expireDate.getDate() - 1);
+        document.cookie = cookieName + "= " + "; expires=" + expireDate.toGMTString();
     }
-}
-
-// ------------- SET TIMEOUT TO TEMPORARILY "LOCK" SLIDES ------------- //
-function slideDurationTimeout(slideDuration) {
-    setTimeout(function () {
-        ticking = false;
-    }, slideDuration);
-}
-
-// ------------- ADD EVENT LISTENER ------------- //
-var mousewheelEvent = isFirefox ? "DOMMouseScroll" : "wheel";
-//window.addEventListener(mousewheelEvent, _.throttle(parallaxScroll, 60), false);
-
-// ------------- SLIDE MOTION ------------- //
-function nextItem() {
-    var $previousSlide = $(".background").eq(currentSlideNumber - 1);
-    $previousSlide.removeClass("up-scroll").addClass("down-scroll");
-}
-
-function previousItem() {
-    var $currentSlide = $(".background").eq(currentSlideNumber);
-    $currentSlide.removeClass("down-scroll").addClass("up-scroll");
-}
-
-$(window).on('load',function () {
-    var swiper = new Swiper('#swiper-products', {
-        slidesPerView: 'auto',
-        centeredSlides: true,
-        spaceBetween: 40,
-        grabCursor: true,
-        pagination: {
-            el: '.swiper-pagination-products',
-            type: 'progressbar',
-            clickable: true
-        },
-        breakpoints: {
-            991: {
-                spaceBetween: 20,
-            },
+    function getCookie(cookieName) {
+        cookieName = cookieName + '=';
+        var cookieData = document.cookie;
+        var start = cookieData.indexOf(cookieName);
+        var cookieValue = '';
+        if(start != -1){
+            start += cookieName.length;
+            var end = cookieData.indexOf(';', start);
+            if(end == -1)end = cookieData.length;
+            cookieValue = cookieData.substring(start, end);
         }
-    });
-
-    if ($('#swiper-jumbotron .swiper-slide').length === 1) {
-        setTimeout(function () {
-            $('#swiper-jumbotron .swiper-slide .main-title').addClass('active');
-        }, 100);
+        return unescape(cookieValue);
     }
-    if ($('#swiper-jumbotron .swiper-slide').length > 1) {
-        var interleaveOffset = 0.6;
-        var mainSwiper = new Swiper('#swiper-jumbotron', {
-            autoplay: {
-                delay: 5000,
-            },
-            loop: true,
-            speed: 500,
-            grabCursor: true,
-            watchSlidesProgress: true,
-            pagination: {
-                el: '.swiper-pagination-jumbotron',
-                type: 'bullets',
-                clickable: true
-            },
-            on: {
-                progress: function () {
-                    var swiper = this;
-                    for (var i = 0; i < swiper.slides.length; i++) {
-                        var slideProgress = swiper.slides[i].progress;
-                        var innerOffset = swiper.width * interleaveOffset;
-                        var innerTranslate = slideProgress * innerOffset;
-                        swiper.slides[i].querySelector(".swiper-item").style.transform =
-                            "translate3d(" + innerTranslate + "px, 0, 0)";
-                    }
-                },
-                touchStart: function () {
-                    var swiper = this;
-                    for (var i = 0; i < swiper.slides.length; i++) {
-                        swiper.slides[i].style.transition = "";
-                    }
-                },
-                setTransition: function (speed) {
-                    var swiper = this;
-                    for (var i = 0; i < swiper.slides.length; i++) {
-                        swiper.slides[i].style.transition = speed + "ms";
-                        swiper.slides[i].querySelector(".swiper-item").style.transition =
-                            speed + "ms";
-                    }
-                },
-                transitionStart: function () {
-                    var swiper = this;
-                    $('#swiper-jumbotron .main-title').removeClass('active');
-                    $('#swiper-jumbotron .main-subtitle').removeClass('active');
-                    $('.swiper-slide-active').find('.main-title').addClass('active');
-                    $('.swiper-slide-active').find('.main-subtitle').addClass('active');
-                },
-                transitionEnd: function () {
-                    var swiper = this;
-                    
-                }
+    $(document).ready(function(){
+        var cookiename;
+        $('[data-cookie]').each(function(){
+            cookiename = $(this).attr('data-cookie');
+            if(getCookie(cookiename)!="Y"){
+                $(".popupMainWrap").show();
+                $('[data-cookie=' + cookiename + ']').show();
             }
         });
+        //팝업닫기
+        $('.popupMainWrap .close a').on('click',function(){
+            $(this).closest('[data-cookie]').hide();
+            checkPopupLength();
+        });
+        //오늘하루 그만보기
+        $('.popupMainWrap .today a').on('click',function(){
+            var cookiename = $(this).closest('[data-cookie]').data('cookie');
+            closePopupToday(cookiename);
+            $(this).closest('[data-cookie]').hide();
+            checkPopupLength();
+        });
+    });
+    function closePopupToday(cookiename){
+        setCookie(cookiename,'Y', 1);
     }
-});
+    function checkPopupLength(){
+        if($('[data-cookie]:visible').length == 0){
+            $('.popupMainWrap').hide();
+        }
+    }
+
+     // ------------- VARIABLES ------------- //
+    var ticking = false;
+    var isFirefox = (/Firefox/i.test(navigator.userAgent));
+    var isIe = (/MSIE/i.test(navigator.userAgent)) || (/Trident.*rv\:11\./i.test(navigator.userAgent));
+    var scrollSensitivitySetting = 30; //Increase/decrease this number to change sensitivity to trackpad gestures (up = less sensitive; down = more sensitive)
+    var slideDurationSetting = 600; //Amount of time for which slide is "locked"
+    var currentSlideNumber = 0;
+    var totalSlideNumber = $(".background").length;
+
+    // ------------- DETERMINE DELTA/SCROLL DIRECTION ------------- //
+    function parallaxScroll(evt) {
+        if (isFirefox) {
+            //Set delta for Firefox
+            delta = evt.detail * (-120);
+        } else if (isIe) {
+            //Set delta for IE
+            delta = -evt.deltaY;
+        } else {
+            //Set delta for all other browsers
+            delta = evt.wheelDelta;
+        }
+
+        if (ticking != true) {
+            if (delta <= -scrollSensitivitySetting) {
+                //Down scroll
+                ticking = true;
+                if (currentSlideNumber !== totalSlideNumber - 1) {
+                    currentSlideNumber++;
+                    nextItem();
+                }
+                slideDurationTimeout(slideDurationSetting);
+            }
+            if (delta >= scrollSensitivitySetting) {
+                //Up scroll
+                ticking = true;
+                if (currentSlideNumber !== 0) {
+                    currentSlideNumber--;
+                }
+                previousItem();
+                slideDurationTimeout(slideDurationSetting);
+            }
+        }
+    }
+
+    // ------------- SET TIMEOUT TO TEMPORARILY "LOCK" SLIDES ------------- //
+    function slideDurationTimeout(slideDuration) {
+        setTimeout(function () {
+            ticking = false;
+        }, slideDuration);
+    }
+
+    // ------------- ADD EVENT LISTENER ------------- //
+    var mousewheelEvent = isFirefox ? "DOMMouseScroll" : "wheel";
+    //window.addEventListener(mousewheelEvent, _.throttle(parallaxScroll, 60), false);
+
+    // ------------- SLIDE MOTION ------------- //
+    function nextItem() {
+        var $previousSlide = $(".background").eq(currentSlideNumber - 1);
+        $previousSlide.removeClass("up-scroll").addClass("down-scroll");
+    }
+
+    function previousItem() {
+        var $currentSlide = $(".background").eq(currentSlideNumber);
+        $currentSlide.removeClass("down-scroll").addClass("up-scroll");
+    }
+
+    $(window).on('load',function () {
+        var swiper = new Swiper('#swiper-products', {
+            slidesPerView: 'auto',
+            centeredSlides: true,
+            spaceBetween: 40,
+            grabCursor: true,
+            pagination: {
+                el: '.swiper-pagination-products',
+                type: 'progressbar',
+                clickable: true
+            },
+            breakpoints: {
+                991: {
+                    spaceBetween: 20,
+                },
+            }
+        });
+
+        if ($('#swiper-jumbotron .swiper-slide').length === 1) {
+            setTimeout(function () {
+                $('#swiper-jumbotron .swiper-slide .main-title').addClass('active');
+            }, 100);
+        }
+        if ($('#swiper-jumbotron .swiper-slide').length > 1) {
+            var interleaveOffset = 0.6;
+            var mainSwiper = new Swiper('#swiper-jumbotron', {
+                autoplay: {
+                    delay: 5000,
+                },
+                loop: true,
+                speed: 500,
+                grabCursor: true,
+                watchSlidesProgress: true,
+                pagination: {
+                    el: '.swiper-pagination-jumbotron',
+                    type: 'bullets',
+                    clickable: true
+                },
+                on: {
+                    progress: function () {
+                        var swiper = this;
+                        for (var i = 0; i < swiper.slides.length; i++) {
+                            var slideProgress = swiper.slides[i].progress;
+                            var innerOffset = swiper.width * interleaveOffset;
+                            var innerTranslate = slideProgress * innerOffset;
+                            swiper.slides[i].querySelector(".swiper-item").style.transform =
+                                "translate3d(" + innerTranslate + "px, 0, 0)";
+                        }
+                    },
+                    touchStart: function () {
+                        var swiper = this;
+                        for (var i = 0; i < swiper.slides.length; i++) {
+                            swiper.slides[i].style.transition = "";
+                        }
+                    },
+                    setTransition: function (speed) {
+                        var swiper = this;
+                        for (var i = 0; i < swiper.slides.length; i++) {
+                            swiper.slides[i].style.transition = speed + "ms";
+                            swiper.slides[i].querySelector(".swiper-item").style.transition =
+                                speed + "ms";
+                        }
+                    },
+                    transitionStart: function () {
+                        var swiper = this;
+                        $('#swiper-jumbotron .main-title').removeClass('active');
+                        $('#swiper-jumbotron .main-subtitle').removeClass('active');
+                        $('.swiper-slide-active').find('.main-title').addClass('active');
+                        $('.swiper-slide-active').find('.main-subtitle').addClass('active');
+                    },
+                    transitionEnd: function () {
+                        var swiper = this;
+
+                    }
+                }
+            });
+        }
+    });
  </script>
 
 </body>

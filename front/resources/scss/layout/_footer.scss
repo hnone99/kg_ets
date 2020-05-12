@@ -7,34 +7,31 @@
 
     .menu{
         margin-bottom: 25px;padding-top: 12px;
-        ul{
-            display: flex;
-        }        
+        ul{display: flex;flex-wrap: wrap;}
         li{
-            position: relative;font-weight: 500;font-size: 15px;
-            strong{
-                color: $primary;
+            position: relative;font-weight: 500;font-size: 15px;margin-right: 15px;padding-right: 15px;
+            strong{color: $primary;}
+            &::before{
+                content: '';display: block;width: 1px;height: 12px;background-color: #ddd;position: absolute;right:0;top:50%;margin-top: -6px;
             }
         }
-        li + li{
-            margin-left: 15px;padding-left: 15px;
-        }
-        li + li:before{
-            content: '';display: block;width: 1px;height: 12px;background-color: #ddd;position: absolute;left:0;top:50%;margin-top: -6px;
+        li:last-child{
+            margin-right: 0;padding-right: 0;
+            &::before{display: none;}
         }
     }
-    
+
     .social-wrap{
         position: absolute;right:0;top:0;display: flex;
         .social{
             margin-right: 30px;
             i {
                 font-size: 46px;color: #5064a8;
-            }            
+            }
         }
         .familysite{
             .btn-outline-dark{background: #fff !important;color: $dark !important;position: relative;z-index: 2;}
-            
+
             .dropdown-toggle{
                 font-size: 14px;
                 min-width:230px;
@@ -44,10 +41,10 @@
                 -webkit-border-radius: 25px;
                 -moz-border-radius: 25px;
                 -ms-border-radius: 25px;
-                -o-border-radius: 25px;                
+                -o-border-radius: 25px;
             }
             .dropdown-toggle:after{
-                margin-top: .6em;float: right;            
+                margin-top: .6em;float: right;
             }
             .dropdown-menu{
                 width: 230px;font-size: 14px;padding: 15px 15px 55px;border-radius: 25px;border: 1px solid $dark;margin-bottom: -40px;z-index: 1;
@@ -56,7 +53,7 @@
             }
         }
     }
-    
+
     .info{
         > div{
             margin: 6px 0 0;
@@ -67,7 +64,7 @@
     }
 }
 
-.btn-top{ 
+.btn-top{
     position: fixed; right:-80px; bottom:10px; z-index: $zindex-btn-top;transition: all 0.3s; -webkit-transition: all 0.3s; -moz-transition: all 0.3s; -ms-transition: all 0.3s; -o-transition: all 0.3s;
     a{
         display: inline-block;width: 50px;height: 50px;line-height: 50px;text-align: center;background-color: $pink;font-size: 16px;color: #fff;
@@ -83,15 +80,12 @@
 }
 
 @include media-breakpoint-down(md) {
-    #footer{ 
+    #footer{
         padding: 20px 0;font-size: 12px;letter-spacing: -0.035em;
 
         .menu{
-            margin-bottom: 20px;padding-top: 0;
-            li{font-size: 13px;white-space: nowrap;}      
-            li + li{
-                margin-left: 8px;padding-left: 8px;
-            }
+            margin-bottom: 15px;padding-top: 0;
+            li{font-size: 13px;white-space: nowrap;margin-right: 8px;padding-right: 8px;line-height: 1.8;}
         }
 
         .social-wrap{
@@ -114,7 +108,7 @@
             }
         }
     }
-    .btn-top{ 
+    .btn-top{
         bottom:15px;
         a{
             width: 40px;height: 40px;line-height: 40px;
@@ -122,5 +116,5 @@
         &.active{
             right: 15px;
         }
-    } 
+    }
 }

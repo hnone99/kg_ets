@@ -817,33 +817,41 @@ html.open-sitemap .sitemap-wrap {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 #footer .menu li {
   position: relative;
   font-weight: 500;
   font-size: 15px;
+  margin-right: 15px;
+  padding-right: 15px;
 }
 
 #footer .menu li strong {
   color: #862991;
 }
 
-#footer .menu li + li {
-  margin-left: 15px;
-  padding-left: 15px;
-}
-
-#footer .menu li + li:before {
+#footer .menu li::before {
   content: '';
   display: block;
   width: 1px;
   height: 12px;
   background-color: #ddd;
   position: absolute;
-  left: 0;
+  right: 0;
   top: 50%;
   margin-top: -6px;
+}
+
+#footer .menu li:last-child {
+  margin-right: 0;
+  padding-right: 0;
+}
+
+#footer .menu li:last-child::before {
+  display: none;
 }
 
 #footer .social-wrap {
@@ -954,16 +962,15 @@ html.open-sitemap .sitemap-wrap {
     letter-spacing: -0.035em;
   }
   #footer .menu {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     padding-top: 0;
   }
   #footer .menu li {
     font-size: 13px;
     white-space: nowrap;
-  }
-  #footer .menu li + li {
-    margin-left: 8px;
-    padding-left: 8px;
+    margin-right: 8px;
+    padding-right: 8px;
+    line-height: 1.8;
   }
   #footer .social-wrap {
     position: static;
@@ -2629,6 +2636,79 @@ button {
   }
   .quick-menu li a span {
     display: none;
+  }
+}
+
+.popupMainWrap {
+  display: none;
+}
+
+.popupMainWrap .backdrop {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 8888;
+}
+
+.popupWrap {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 8889;
+  padding: 15px;
+}
+
+.popupWrap .row {
+  height: 100%;
+}
+
+.popupWrap .col-12 {
+  margin: 5px 0;
+  display: none;
+}
+
+.popupMain {
+  background: #fff;
+  position: relative;
+}
+
+.popupMain .img {
+  text-align: center;
+}
+
+.popupMain .img img {
+  vertical-align: top;
+}
+
+.popupMain .close {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+}
+
+.popupMain .close a {
+  display: block;
+  font-size: 30px;
+  padding: 5px;
+  color: #000;
+}
+
+.popupMain .today {
+  text-align: center;
+  padding-bottom: 20px;
+  background-color: #fff;
+  margin-top: -1px;
+  padding-top: 20px;
+}
+
+@media (max-width: 991.98px) {
+  .popupMain .img img {
+    max-height: 30vh;
   }
 }
 
