@@ -2045,7 +2045,7 @@ button {
 .main-jumbotron .scroll {
   position: absolute;
   left: 50%;
-  bottom: 14%;
+  bottom: 12%;
   transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
@@ -2059,14 +2059,10 @@ button {
 
 .main-jumbotron .scroll span {
   display: block;
-  width: 40px;
-  height: 40px;
-  line-height: 40px;
-  background-color: #fff;
-  color: #000;
-  border-radius: 100px;
+  font-size: 30px;
+  color: #fff;
   text-align: center;
-  margin: 10px auto 0;
+  margin: 0 auto 0;
 }
 
 .main-jumbotron .scroll span i {
@@ -2935,6 +2931,45 @@ button {
 
 .policy .mission {
   margin: 60px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.policy .mission .circle {
+  max-width: 380px;
+  height: 380px;
+  border: 6px solid #862991;
+  border-radius: 100%;
+  overflow: hidden;
+  margin: 0 -15px;
+}
+
+.policy .mission .circle .in {
+  height: 100%;
+  border-radius: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border: 10px solid rgba(132, 42, 144, 0.1);
+}
+
+.policy .mission .circle p {
+  font-size: 18px;
+  padding: 0 40px;
 }
 
 .policy .core {
@@ -3055,6 +3090,20 @@ button {
 @media (max-width: 991.98px) {
   .policy .mission {
     margin: 30px 0;
+  }
+  .policy .mission .circle {
+    border-width: 4px;
+    margin: 0 -8px;
+    height: auto;
+    width: 190px;
+  }
+  .policy .mission .circle .in {
+    padding: 30px 0;
+    border-width: 7px;
+  }
+  .policy .mission .circle p {
+    font-size: 13px;
+    padding: 0 15px;
   }
   .policy .core {
     padding: 30px 15px;
@@ -4652,6 +4701,27 @@ button {
 
 @media (max-width: 991.98px) {
   .reagent .diagram {
+    padding: 30px 15px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+}
+
+.elc {
+  text-align: center;
+}
+
+.jumbotron-elc {
+  background-image: url("../images/content/bg_jumbo_elc.jpg");
+}
+
+.elc .diagram {
+  padding: 60px 15px;
+  margin-top: 60px;
+}
+
+@media (max-width: 991.98px) {
+  .elc .diagram {
     padding: 30px 15px;
     margin-top: 30px;
     margin-bottom: 30px;

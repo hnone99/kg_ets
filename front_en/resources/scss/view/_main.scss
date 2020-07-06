@@ -117,9 +117,9 @@ $zindex-title: 4;
         &.active{ margin-top: 40px;opacity: 1; margin-top: 0; }
     }
     .scroll{
-        position: absolute; left: 50%; bottom: 14%; transform: translate(-50%,-50%); -webkit-transform: translate(-50%,-50%); -moz-transform: translate(-50%,-50%); -ms-transform: translate(-50%,-50%); -o-transform: translate(-50%,-50%); z-index: $zindex-title;color: #fff;font-family: sans-serif;font-weight: 700;
+        position: absolute; left: 50%; bottom: 12%; transform: translate(-50%,-50%); -webkit-transform: translate(-50%,-50%); -moz-transform: translate(-50%,-50%); -ms-transform: translate(-50%,-50%); -o-transform: translate(-50%,-50%); z-index: $zindex-title;color: #fff;font-family: sans-serif;font-weight: 700;
         span{
-            display: block;width: 40px;height: 40px;line-height: 40px;background-color: #fff;color: #000;border-radius: 100px;text-align: center;margin: 10px auto 0;
+            display: block;font-size: 30px;color: #fff;text-align: center;margin: 0 auto 0;
             i{vertical-align: middle;}
         }
     }

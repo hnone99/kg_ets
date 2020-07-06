@@ -1,6 +1,6 @@
-#header {    
-    > .container{      
-        height: 100%;  
+#header {
+    > .container{
+        height: 100%;
         display: flex;
         justify-content: space-between;
         -webkit-box-pack: justify; -ms-flex-pack: justify;
@@ -14,7 +14,7 @@
     left: 0;
     top: 0;
     z-index: $zindex-header;
-    height: $header-height;    
+    height: $header-height;
     transition: all 0.15s;
     -webkit-transition: all 0.15s;
     -moz-transition: all 0.15s;
@@ -34,8 +34,8 @@
             display: flex;align-items: center;
             > li{
                 margin-left: 30px;position: relative;
-            }               
-        }        
+            }
+        }
     }
     .quick {text-decoration: none;}
     .btn-lang{
@@ -44,7 +44,7 @@
             content: '';display: inline-block;vertical-align: middle;width: 19px;height: 19px;background: url('../images/common/ico_global.png') no-repeat 0 0;margin-top: -2px;margin-right: 8px;
         }
         i{
-            margin-left: 5px;     
+            margin-left: 5px;
         }
     }
     .btn-sitemap {
@@ -74,7 +74,7 @@
         transition: background-color 200ms ease-in-out, height 420ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
         .row{width: 615px;}
         a{color: #fff;}
-        a:hover{text-decoration: none;}        
+        a:hover{text-decoration: none;}
         .depth1{
             cursor:pointer;
             > a{display: block;height: 100%;padding: 35px 25px;font-size: 20px;font-weight: 700;
@@ -111,13 +111,13 @@ html:not(.open-sitemap) #header:hover{
         & i{color: $dark;}
         &::before{background-image: url('../images/common/ico_global_b.png');}
     }
-    .btn-sitemap {    
+    .btn-sitemap {
         &::after,
         &::before,
         & span {background-color: $dark;}
     }
-    #gnb{        
-        a{color: $dark;}        
+    #gnb{
+        a{color: $dark;}
     }
 }
 @include media-breakpoint-down(md) {
@@ -139,7 +139,7 @@ html:not(.open-sitemap) #header:hover{
     }
 }
 @include media-breakpoint-down(sm) {
-    
+
 }
 html.open-gnb-sub,
 html.header-over{
@@ -153,16 +153,16 @@ html.header-over{
             & i{color: $dark;}
             &::before{background-image: url('../images/common/ico_global_b.png');}
         }
-        .btn-sitemap {    
+        .btn-sitemap {
             &::after,
             &::before,
             & span {background-color: $dark;}
         }
-        #gnb{        
-            a{color: $dark;}        
-        } 
+        #gnb{
+            a{color: $dark;}
+        }
     }
-    
+
 }
 html.open-gnb-sub{
     #header{
@@ -170,12 +170,12 @@ html.open-gnb-sub{
         #gnb{
             height: 500px;background: #fff;box-shadow: 0 5px 8px rgba(0,0,0,0.2);
             .list{display: block;}
-        } 
+        }
     }
 }
 
 html.header-fixed{
-    #header {        
+    #header {
         background-color: rgba(255,255,255,1);height: calc(#{$header-height} - 20px);border-bottom: 1px solid #ddd;
         > .container{
             width: 100%;max-width:100%;padding: 0 60px;
@@ -191,7 +191,7 @@ html.header-fixed{
                 background-image: url('../images/common/ico_global_b.png');
             }
         }
-        .btn-sitemap {    
+        .btn-sitemap {
             &::after,
             &::before,
             & span {
@@ -200,7 +200,7 @@ html.header-fixed{
         }
         #gnb{display: none;}
     }
-    
+
 }
 
 html.hide-gnb{
@@ -267,12 +267,12 @@ html.hide-gnb{
                     -moz-transition: width 280ms ease-in-out;
                     -ms-transition: width 280ms ease-in-out;
                     -o-transition: width 280ms ease-in-out;
-                    transition: width 280ms ease-in-out;                
+                    transition: width 280ms ease-in-out;
                 }
             }
         }
         a {color: #fff;line-height: 1.7;text-decoration: none;}
-        .list{        
+        .list{
             > li{
                 margin-bottom:10px;font-size: 24px;
                 > ul{
@@ -290,7 +290,7 @@ html.hide-gnb{
 }
 
 html.open-sitemap {
-    overflow: hidden;width: 100%;height: 100vh;    
+    overflow: hidden;width: 100%;height: 100vh;
     #header{
         .btn-sitemap{
             &::before {
@@ -299,20 +299,20 @@ html.open-sitemap {
                 -moz-transform: translateY(14px) rotate(135deg);
                 -ms-transform: translateY(14px) rotate(135deg);
                 -o-transform: translateY(14px) rotate(135deg);
-            }    
+            }
             &::after {
                 transform: translateY(-14px) rotate(-135deg);
                 -moz-transform: translateY(-14px) rotate(-135deg);
                 -webkit-transform: translateY(-14px) rotate(-135deg);
                 -ms-transform: translateY(-14px) rotate(-135deg);
                 -o-transform: translateY(-14px) rotate(-135deg);
-            }    
+            }
             & span {
                 transform: scale(0);
                 -moz-transform: scale(0);
                 -webkit-transform: scale(0);
             }
-        }        
+        }
         #gnb{display: none;}
     }
     .sitemap-wrap {
@@ -388,7 +388,7 @@ html.open-sitemap {
             li.active{display: none;}
             .ing{
                 display: flex;align-items:center;position: relative;height: 100%;text-decoration: none;padding: 0 20px;font-size: 19px;
-        
+
                 &::before{
                     content: '';display: block;width: 0; height: 0; border-left: 5px solid transparent;border-right: 5px solid transparent;border-top: 6px solid black;position: absolute;right: 20px;top: 50%;margin-top: -2.5px;
                     -ms-transform: rotate(0);
@@ -406,7 +406,7 @@ html.open-sitemap {
                 &.active{
                     background-color: #f5f5f5;
                 }
-                &.active + ul{display: block;}                
+                &.active + ul{display: block;}
                 &.active:before{-ms-transform: rotate(180deg);-webkit-transform: rotate(180deg);transform: rotate(180deg);}
             }
             &:last-of-type > a{

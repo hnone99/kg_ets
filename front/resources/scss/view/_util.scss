@@ -19,6 +19,17 @@
     }
 }
 
+.elc{
+    text-align: center;
+    @at-root .jumbotron-elc{background-image: url('../images/content/bg_jumbo_elc.jpg');}
+    .diagram{padding: $content-padding-y 15px;margin-top: $content-padding-y;}
+}
+@include media-breakpoint-down(md) {
+    .elc{
+        .diagram{padding: $content-padding-y-md 15px;margin-top: $content-padding-y-md;margin-bottom: $content-padding-y-md;}
+    }
+}
+
 .join{
     border-top: 1px solid #ddd;margin: 0 auto;
     padding: $content-padding-y;

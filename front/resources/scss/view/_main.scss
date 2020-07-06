@@ -117,9 +117,9 @@ $zindex-title: 4;
         &.active{ margin-top: 40px;opacity: 1; margin-top: 0; }
     }
     .scroll{
-        position: absolute; left: 50%; bottom: 14%; transform: translate(-50%,-50%); -webkit-transform: translate(-50%,-50%); -moz-transform: translate(-50%,-50%); -ms-transform: translate(-50%,-50%); -o-transform: translate(-50%,-50%); z-index: $zindex-title;color: #fff;font-family: sans-serif;font-weight: 700;
+        position: absolute; left: 50%; bottom: 12%; transform: translate(-50%,-50%); -webkit-transform: translate(-50%,-50%); -moz-transform: translate(-50%,-50%); -ms-transform: translate(-50%,-50%); -o-transform: translate(-50%,-50%); z-index: $zindex-title;color: #fff;font-family: sans-serif;font-weight: 700;
         span{
-            display: block;width: 40px;height: 40px;line-height: 40px;background-color: #fff;color: #000;border-radius: 100px;text-align: center;margin: 10px auto 0;
+            display: block;font-size: 30px;color: #fff;text-align: center;margin: 0 auto 0;
             i{vertical-align: middle;}
         }
     }
@@ -309,7 +309,7 @@ $zindex-title: 4;
     position: fixed;
     top: 50%;
     right: 10px;
-    margin-top: -100px;
+    margin-top: -140px;
     z-index: 2;
     transform: translateX(110%);
     transition: all .25s 1s ease-in-out;
@@ -317,11 +317,12 @@ $zindex-title: 4;
         transform: translateX(0);
     }
     li{
-        width: 120px;height: 120px;background: $secondary;color: #fff;text-align: center;border-radius: 120px;transition:all .15s;
-        a{display: block;width: 100%;height: 100%;color: #fff;text-decoration: none;display: flex;align-items:center;justify-content:center;letter-spacing: -0.05em;}
-        &:hover{box-shadow: 3px 3px 6px rgba(0,0,0,0.5);}
+        width: 120px;height: 120px;background: $secondary;color: #fff;text-align: center;transition:all .15s;border-radius: 120px;
+        a{display: block;width: 100%;height: 100%;color: #fff;text-decoration: none;display: flex;align-items:center;justify-content:center;letter-spacing: -0.05em;box-shadow: inset 0 0 15px rgba(0,0,0,.2);border-radius: 120px;
+            &:hover{box-shadow: inset 0 5px 15px rgba(0, 0, 0, .4);}
+        }
     }
-    li:nth-child(2){background: $primary;}
+    li:nth-child(even){background: $primary;}
 }
 @include media-breakpoint-down(md) {
     .quick-menu{top: 80px;margin-top: 0;}
